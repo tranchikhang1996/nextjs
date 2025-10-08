@@ -1,5 +1,4 @@
 import { Countdown } from '../ui'
-import Button from '../ui/Button'
 
 interface HeroSectionProps {
   onNavigate: (sectionId: string) => void

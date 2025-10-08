@@ -37,7 +37,7 @@ export default function RegistrationSection() {
           </div>
           <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6">Register as INDIVIDUAL</h3>
           <p className="text-green-100 mb-6 lg:mb-8 text-base lg:text-lg leading-relaxed">
-            Looking for teammates? We'll help you find the perfect team.
+            Looking for teammates? We&apos;ll help you find the perfect team.
           </p>
           <Button variant="secondary" size="lg" className="w-full text-[#059669]">
             Register Individual

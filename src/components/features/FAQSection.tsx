@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Card from '../ui/Card'
-import Icon from '../ui/Icon'
 
 const faqData = [
   {
