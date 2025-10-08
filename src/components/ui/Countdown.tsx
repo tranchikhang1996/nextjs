@@ -33,9 +33,9 @@ export default function Countdown({expired, className}: {expired?: Date, classNa
 
   return (
     <div className={`flex flex-col items-center justify-center text-white ${className}`}>
-      <h3 className="text-xl font-semibold mb-2 tracking-wide">COUNTDOWN</h3>
+      <h3 className="text-lg lg:text-xl font-semibold mb-2 lg:mb-4 tracking-wide">COUNTDOWN</h3>
 
-      <div className="flex justify-between gap-2">
+      <div className="flex justify-center gap-2 lg:gap-4">
         <TimeBox label="Day(s)" value={timeLeft.days} />
         <TimeBox label="Hour(s)" value={timeLeft.hours} />
         <TimeBox label="Minute(s)" value={timeLeft.minutes} />
@@ -53,10 +53,10 @@ interface TimeBoxProps {
 function TimeBox({ label, value }: TimeBoxProps) {
   return (
     <div className="flex flex-col items-center justify-start">
-      <p className="flex items-center justify-center text-lg font-bold font-mono bg-[#1ab9ad] rounded-2xl w-16 h-15">
+      <p className="flex items-center justify-center text-sm lg:text-lg font-bold font-mono bg-[#1ab9ad] rounded-2xl w-12 h-12 lg:w-16 lg:h-16">
         {String(value).padStart(2, "0")}
       </p>
-      <div className="mt-1 text-sm">{label}</div>
+      <div className="mt-1 text-xs lg:text-sm text-center">{label}</div>
     </div>
   );
 }

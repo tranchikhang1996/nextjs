@@ -33,24 +33,24 @@ export default function FAQSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <section className="bg-[linear-gradient(to_right,#094992,#38a44b)] py-16 px-8" id="faq">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">FAQ</h2>
+    <section className="bg-[linear-gradient(to_right,#094992,#38a44b)] py-16 px-4 lg:px-8" id="faq">
+      <div className="text-center mb-12 lg:mb-16">
+        <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8">FAQ</h2>
       </div>
       
       <div className="space-y-2 max-w-5xl mx-auto">
         {faqData.map((faq, index) => (
           <Card key={index} className="bg-white">
             <button
-              className="w-full px-8 py-2 text-left flex justify-between items-center focus:outline-none group"
+              className="w-full px-4 lg:px-8 py-4 lg:py-6 text-left flex justify-between items-center focus:outline-none group"
               onClick={() => setOpenFaq(openFaq === index ? null : index)}
             >
               <div className="flex items-center space-x-4">
-                <span className="text-gray-900 text-lg group-hover:text-[#1e40af] transition-colors">
+                <span className="text-gray-900 text-base lg:text-lg group-hover:text-[#1e40af] transition-colors pr-4">
                   {faq.question}
                 </span>
               </div>
-              <div className="bg-[#1e40af] rounded-full w-8 h-8 flex items-center justify-center">
+              <div className="bg-[#1e40af] rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
                 <span className={`text-white font-bold text-lg transform transition-transform duration-200 ${
                   openFaq === index ? 'rotate-45' : ''
                 }`}>
@@ -59,9 +59,9 @@ export default function FAQSection() {
               </div>
             </button>
             {openFaq === index && (
-              <div className="px-8 pb-6">
-                <div className="bg-gray-50 p-6 rounded-xl">
-                  <p className="text-gray-700 leading-relaxed text-lg">{faq.answer}</p>
+              <div className="px-4 lg:px-8 pb-6">
+                <div className="bg-gray-50 p-4 lg:p-6 rounded-xl">
+                  <p className="text-gray-700 leading-relaxed text-base lg:text-lg">{faq.answer}</p>
                 </div>
               </div>
             )}

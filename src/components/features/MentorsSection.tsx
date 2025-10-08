@@ -43,16 +43,16 @@ function MentorCard({ mentor, type }: { mentor: typeof awsMentors[0], type: 'aws
 
 export default function MentorsSection() {
   return (
-    <section id="mentors" className="bg-[linear-gradient(to_right,#094992,#38a44b)] px-48 pt-16">
-      <div className="text-start">
-        <h3 className="text-4xl md:text-5xl font-bold text-white mb-8">Mentors</h3>
-        <p className="text-base text-gray-300 max-w-4xl leading-relaxed">Get ready to embark on an exhilarating journey of innovation and collaboration with our stellar lineup of mentors, hailing from VPBank and AWS!</p>
+    <section id="mentors" className="bg-[linear-gradient(to_right,#094992,#38a44b)] px-4 lg:px-24 xl:px-48 pt-16 pb-8">
+      <div className="text-start mb-12">
+        <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 lg:mb-8">Mentors</h3>
+        <p className="text-sm lg:text-base text-gray-300 max-w-4xl leading-relaxed">Get ready to embark on an exhilarating journey of innovation and collaboration with our stellar lineup of mentors, hailing from VPBank and AWS!</p>
       </div>
       
         {/* AWS Mentors */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-8">Mentors from AWS</h3>
-          <div className="grid grid-cols-3 gap-6 px-32">
+        <div className="mb-16">
+          <h3 className="text-xl lg:text-2xl font-bold text-white mb-6 lg:mb-8">Mentors from AWS</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 lg:px-16 xl:px-32">
             {awsMentors.map((mentor, index) => (
               <MentorCard key={index} mentor={mentor} type="aws" />
             ))}
@@ -61,8 +61,8 @@ export default function MentorsSection() {
 
         {/* VPBank Mentors */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-8">Mentors from VPBank</h3>
-          <div className="grid sm:grid-cols-3 gap-6 px-32">
+          <h3 className="text-xl lg:text-2xl font-bold text-white mb-6 lg:mb-8">Mentors from VPBank</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 lg:px-16 xl:px-32">
             {vpbankMentors.map((mentor, index) => (
               <MentorCard key={index} mentor={mentor} type="vpbank" />
             ))}

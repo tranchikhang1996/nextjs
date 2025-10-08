@@ -33,21 +33,43 @@ const timelineData = [
 
 export default function TimelineSection() {
   return (
-    <section id="timeline" className="bg-[linear-gradient(to_right,#094992,#38a44b)] px-16 pt-16">
-      <h3 className="text-4xl md:text-5xl text-center font-bold text-white mb-6">VPBank Technology Hackathon 2025 Timeline -<br /> Senior Category </h3>
-      <div className="flex flex-row gap-2 justify-evenly px-60">
+    <section id="timeline" className="bg-[linear-gradient(to_right,#094992,#38a44b)] px-4 lg:px-16 pt-16 pb-8">
+      <h3 className="text-2xl lg:text-4xl xl:text-5xl text-center font-bold text-white mb-8 lg:mb-12">
+        VPBank Technology Hackathon 2025 Timeline -<br className="hidden lg:block" /> 
+        <span className="lg:hidden"> </span>Senior Category 
+      </h3>
+      
+      {/* Mobile Timeline - Vertical Layout */}
+      <div className="lg:hidden space-y-8">
         {timelineData.map((item, index) => (
-          <div key={index} className="flex flex-col items-start">
-            <p className='font-bold text-lg text-white h-[3em] leading-[1.5em] overflow-hidden'><strong>{item.date}</strong></p>
-            <br />
-            <div className="flex flex-row items-center">
-              <img src="/timeline_icon.png" alt="" className="w-1/3 h-auto" />
-              <img src="/timeline_line.png" alt="" className="w-2/3 h-auto" />
+          <div key={index} className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+            <div className="flex items-center mb-3">
+              <img src="/timeline_icon.png" alt="" className="w-8 h-8 mr-3" />
+              <div>
+                <p className='font-bold text-base text-white'>{item.title}</p>
+                <p className='font-bold text-sm text-white/80'>{item.date}</p>
+              </div>
             </div>
-            <br />
-            <p className='font-bold text-lg text-white'><strong>{item.title}</strong></p>
-            <p className='text-sm text-white'><strong>Format:</strong>{item.format}</p>
-            <p className='text-white text-sm'>{item.description}</p>
+            <p className='text-sm text-white/90 mb-2'><strong>Format:</strong> {item.format}</p>
+            <p className='text-white/90 text-sm'>{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop Timeline - Horizontal Layout */}
+      <div className="hidden lg:flex flex-row gap-2 justify-evenly px-4 xl:px-60">
+        {timelineData.map((item, index) => (
+          <div key={index} className="flex flex-col items-start max-w-48">
+            <p className='font-bold text-base xl:text-lg text-white h-[3em] leading-[1.5em] overflow-hidden'><strong>{item.date}</strong></p>
+            <div className="my-4">
+              <div className="flex flex-row items-center">
+                <img src="/timeline_icon.png" alt="" className="w-1/3 h-auto" />
+                <img src="/timeline_line.png" alt="" className="w-2/3 h-auto" />
+              </div>
+            </div>
+            <p className='font-bold text-base xl:text-lg text-white mb-2'><strong>{item.title}</strong></p>
+            <p className='text-xs xl:text-sm text-white mb-2'><strong>Format:</strong> {item.format}</p>
+            <p className='text-white text-xs xl:text-sm'>{item.description}</p>
           </div>
         ))}
       </div>

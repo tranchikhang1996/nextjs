@@ -63,36 +63,34 @@ export default function OverviewSection() {
 
 function IntroSection() {
     return (
-        <div className="flex gap-8 p-4">
-            <div className="basis-1/2 flex flex-col items-end pl-48">
-                <h2 className="text-4xl md:text-5xl font-bold text-white">Season 2 Comes Back</h2>
-                <br />
-                <p className="text-base text-white mb-4"><strong>VPBank Technology Hackathon 2025</strong> – An arena for passionate technology talents with breakthrough thinking and a desire to solve complex problems in the financial and banking industry.</p>
-                <ul className="space-y-2">
+        <div className="flex flex-col lg:flex-row gap-8 p-4 lg:p-8">
+            <div className="lg:basis-1/2 flex flex-col lg:items-end lg:pl-24 xl:pl-48">
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">Season 2 Comes Back</h2>
+                <p className="text-sm lg:text-base text-white mb-6"><strong>VPBank Technology Hackathon 2025</strong> – An arena for passionate technology talents with breakthrough thinking and a desire to solve complex problems in the financial and banking industry.</p>
+                <ul className="space-y-3 mb-6">
                     {
                         candidates.map((candidate, index) => (
                             <li key={index} className="flex items-start">
-                                <img src="/vp_icon.png" alt="" className="size-5 mr-2 mt-1" />
-                                <span className="text-base text-neutral-100 font-medium"><strong>{candidate.name}</strong> - {candidate.description}</span>
+                                <img src="/vp_icon.png" alt="" className="size-4 lg:size-5 mr-2 mt-1 flex-shrink-0" />
+                                <span className="text-sm lg:text-base text-neutral-100 font-medium"><strong>{candidate.name}</strong> - {candidate.description}</span>
                             </li>
                         ))
                     }
                 </ul>
-                <br />
-                <p className="text-lg text-white mb-4"><strong>VPBank Technology Hackathon 2025 offers you an invaluable experience:</strong></p>
-                <ul className="space-y-2">
+                <p className="text-base lg:text-lg text-white mb-4 font-bold">VPBank Technology Hackathon 2025 offers you an invaluable experience:</p>
+                <ul className="space-y-3">
                     {
                         offers.map((offer, index) => (
                             <li key={index} className="flex items-start">
-                                <img src="/vp_icon.png" alt="" className="size-5 mr-2 mt-1" />
-                                <span className="text-base text-neutral-100 font-medium"><strong>{offer.offer}</strong> {offer.description}</span>
+                                <img src="/vp_icon.png" alt="" className="size-4 lg:size-5 mr-2 mt-1 flex-shrink-0" />
+                                <span className="text-sm lg:text-base text-neutral-100 font-medium"><strong>{offer.offer}</strong> {offer.description}</span>
                             </li>
                         ))
                     }
                 </ul>
             </div>
-            <div className="basis-1/2 flex justify-center items-end">
-                <img src="/overview_image.png" alt="Overview Image" className="w-full h-auto bg-cover" />
+            <div className="lg:basis-1/2 flex justify-center items-center mt-8 lg:mt-0">
+                <img src="/overview_image.png" alt="Overview Image" className="w-full max-w-md lg:max-w-full h-auto" />
             </div>
         </div>
     )
@@ -100,11 +98,16 @@ function IntroSection() {
 
 function HighlightsSection() {
     return (
-        <div className="flex flex-col items-center py-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">VPBank Technology Hackathon 2025 Highlights</h2>
-            <br />
-            <div className="w-2/5 p-2 bg-[linear-gradient(to_right,#094992,#38a44b)] rounded-lg shadow-lg">
-                <iframe className="aspect-video" src="https://www.youtube.com/embed/I87QdtAvQx0?si=s1iPmu1tRAyxyjy2"></iframe>
+        <div className="flex flex-col items-center py-8 px-4">
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-8">VPBank Technology Hackathon 2025 Highlights</h2>
+            <div className="w-full max-w-4xl p-2 bg-[linear-gradient(to_right,#094992,#38a44b)] rounded-lg shadow-lg">
+                <iframe 
+                    className="w-full aspect-video rounded-lg" 
+                    src="https://www.youtube.com/embed/I87QdtAvQx0?si=s1iPmu1tRAyxyjy2"
+                    title="VPBank Technology Hackathon 2025 Highlights"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
             </div>
         </div>
     )
@@ -112,24 +115,22 @@ function HighlightsSection() {
 
 function OpportunitiesSection() {
     return (
-        <div className="flex gap-8 p-4 lg:pl-48 items-center">
-            <div className="basis-1/2">
-                <h2 className="text-4xl font-bold text-white">Exploring Opportunities</h2>
-                <br />
-                <ul className="space-y-2">
+        <div className="flex flex-col lg:flex-row gap-8 p-4 lg:p-8 lg:pl-24 xl:pl-48 items-center">
+            <div className="lg:basis-1/2 order-2 lg:order-1">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Exploring Opportunities</h2>
+                <ul className="space-y-3">
                     {
                         opportunities.map((opportunity, index) => (
                             <li key={index} className="flex items-start">
-                                <img src="/vp_icon.png" alt="" className="size-5 mr-2 mt-1" />
-                                <span className="text-base text-neutral-100 font-medium">{opportunity}</span>
+                                <img src="/vp_icon.png" alt="" className="size-4 lg:size-5 mr-2 mt-1 flex-shrink-0" />
+                                <span className="text-sm lg:text-base text-neutral-100 font-medium">{opportunity}</span>
                             </li>
                         ))
                     }
                 </ul>
-                <br />
             </div>
-            <div className="basis-1/2 flex justify-center items-end">
-                <img src="/opportunities.png" alt="Overview Image" className="w-full h-auto bg-cover" />
+            <div className="lg:basis-1/2 flex justify-center items-center order-1 lg:order-2">
+                <img src="/opportunities.png" alt="Opportunities Image" className="w-full max-w-md lg:max-w-full h-auto" />
             </div>
         </div>
     )
@@ -137,11 +138,26 @@ function OpportunitiesSection() {
 
 function PrizeSection() {
     return (
-        <section className="w-full max-w-5xl mx-auto py-16 px-16">
-            <div className="flex items-center justify-center gap-6">
-                <PrizeCard title= "1st Runner-up" value="40.000.000 VNĐ" cupIcon="/silver_cup.png" className="basis-4/5 aspect-[16/9]" />
-                <PrizeCard title= "Champion" value="60.000.000 VNĐ" cupIcon="/gold_cup.png" className="basis-5/5 aspect-[16/9]" />
-                <PrizeCard title= "2nd Runner-up" value="20.000.000 VNĐ" cupIcon="/bronze_cup.png" className="basis-4/5 aspect-[16/9]" />
+        <section className="w-full max-w-6xl mx-auto py-8 lg:py-16 px-4 lg:px-16">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6">
+                <PrizeCard 
+                    title="1st Runner-up" 
+                    value="40.000.000 VNĐ" 
+                    cupIcon="/silver_cup.png" 
+                    className="w-full lg:basis-4/12 aspect-[4/3] lg:aspect-[16/9]" 
+                />
+                <PrizeCard 
+                    title="Champion" 
+                    value="60.000.000 VNĐ" 
+                    cupIcon="/gold_cup.png" 
+                    className="w-full lg:basis-5/12 aspect-[4/3] lg:aspect-[16/9] lg:transform lg:scale-110" 
+                />
+                <PrizeCard 
+                    title="2nd Runner-up" 
+                    value="20.000.000 VNĐ" 
+                    cupIcon="/bronze_cup.png" 
+                    className="w-full lg:basis-4/12 aspect-[4/3] lg:aspect-[16/9]" 
+                />
             </div>
         </section>
     )
